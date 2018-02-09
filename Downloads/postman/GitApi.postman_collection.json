@@ -1,0 +1,55 @@
+{
+	"variables": [],
+	"info": {
+		"name": "GitApi",
+		"_postman_id": "bef7183f-a9dc-bf80-5f2f-75b6ce79b660",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{USERS_URL}}/{{USERNAME}}?id=\"2521724\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"var body = JSON.parse(responseBody);",
+							"tests[\"Body is correct\"] = body[\"login\"] === \"scotch-io\";",
+							"",
+							"tests[\"Gets the correct username\"] = body.login==\"scotch-io\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "{{USERS_URL}}/{{USERNAME}}?id=\"2521724\"",
+					"host": [
+						"{{USERS_URL}}"
+					],
+					"path": [
+						"{{USERNAME}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "\"2521724\"",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
