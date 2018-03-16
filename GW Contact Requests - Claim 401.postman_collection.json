@@ -1,0 +1,584 @@
+{
+	"id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+	"name": "GW Contact Requests - Claim 401",
+	"description": "",
+	"order": [
+		"b8aa0237-d8a4-2c30-f51b-92853c45be12",
+		"0542a1bf-abf8-a6fc-fbd1-b63c7134b653",
+		"390947f9-286e-9f92-b43d-6b5d346cf4c8",
+		"67d2a8f0-f3c7-a89a-074b-0cbe1caa27bd",
+		"6c659cbc-fcac-734e-ecff-70bf1a062c29",
+		"785a5b62-0117-90a1-dab0-3ba7b5d2f96e",
+		"5cb560aa-b88d-33fa-0c8f-ff4f9981a57b",
+		"2385e924-ffb3-09d0-bbf2-a4abdc5489f9",
+		"abc3bfba-2db4-3fb8-c7f4-68030410d863",
+		"fba0b1e0-4e64-8c2e-ef4a-d192b327b402",
+		"c218c377-0941-c820-20de-2f72f57eef4a",
+		"6347cba2-fd33-507f-0ab8-92bdf1a49ccb",
+		"d592b612-b65b-0735-5ac3-b300107259be",
+		"4067ab20-79ea-9086-65d4-9678ef482419",
+		"c3c56893-89ae-48e1-117f-0fe1672c11b0",
+		"bd98bc51-afc8-e725-5bf0-2b4bbe085eb0",
+		"a6bc32fc-b1bf-25d8-7968-d6975eac366f"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1517291495037,
+	"owner": 0,
+	"public": false,
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b02c5c86-c9db-417e-9334-267f1c8e2981",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e187d25e-bb84-4889-925a-3a40180c6f66",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "0542a1bf-abf8-a6fc-fbd1-b63c7134b653",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1514947985945,
+			"name": "Create Account",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "\r\n <soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Header>\r\n    <gwsoap:transaction_id xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">cdad531c-2366-4722-a2f8-8cbb257f685e</gwsoap:transaction_id>\r\n    <gwsoap:authentication xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">\r\n      <gwsoap:username>su</gwsoap:username>\r\n      <gwsoap:password>gw</gwsoap:password>\r\n    </gwsoap:authentication>\r\n  </soap12:Header>\r\n  <soap12:Body>\r\n    <tns:createContact xmlns:tns=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n      <tns:crmContactXML>\r\n        <xmlBackedInstance xmlns=\"http://guidewire.com/ctc/beanmodel\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" entityType=\"ABCompany\" External_UpdateApp=\"cc\" External_UpdateUser=\"su\">\r\n          <field name=\"EmailAddress1\" value=\"rur6@mo.com\" type=\"xs:string\"/>\r\n          <field name=\"Name\" value=\"ryuy666\" type=\"xs:string\"/>\r\n          <field name=\"WorkPhoneCountry\" value=\"AU\" type=\"xs:string\"/>\r\n          <field name=\"Preferred\" value=\"false\" origValue=\"false\" type=\"xs:boolean\"/>\r\n          <field name=\"PrimaryPhone\" value=\"home\" type=\"xs:string\"/>\r\n          <field name=\"External_PublicID\" value=\"cc:204\" type=\"xs:string\"/>\r\n          <field name=\"SourceSystem_icare\" value=\"GWCC\" type=\"xs:string\"/>\r\n          <field name=\"WorkPhone\" value=\"80522263333\" type=\"xs:string\"/>\r\n        \r\n          <fk name=\"PrimaryAddress\">\r\n            <xmlBackedInstance entityType=\"Address\">\r\n              <field name=\"AddressLine1\" value=\"321 Kent Street\" type=\"xs:string\"/>\r\n              <field name=\"AddressType\" value=\"home\" type=\"xs:string\"/>\r\n              <field name=\"City\" value=\"Sydney\" type=\"xs:string\"/>\r\n              <field name=\"Country\" value=\"AU\" type=\"xs:string\"/>\r\n              <field name=\"PostalCode\" value=\"2000\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:202\" type=\"xs:string\"/>\r\n              <field name=\"State\" value=\"AU_NSW\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </fk>\r\n           <array name=\"ContactAddresses\">\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:3\" type=\"xs:string\"/>\r\n              <fk name=\"Address\">\r\n                <xmlBackedInstance entityType=\"Address\">\r\n                  <field name=\"AddressLine1\" value=\"1 Address\" type=\"xs:string\"/>\r\n                  <field name=\"AddressLine2\" value=\"2 Address\" type=\"xs:string\"/>\r\n                  <field name=\"AddressLine3\" value=\"3 Address\" type=\"xs:string\"/>\r\n                  <field name=\"AddressType\" value=\"other\" type=\"xs:string\"/>\r\n                  <field name=\"City\" value=\"Ryde\" type=\"xs:string\"/>\r\n                  <field name=\"Country\" value=\"AU\" type=\"xs:string\"/>\r\n                  <field name=\"PostalCode\" value=\"2000\" type=\"xs:string\"/>\r\n                  <field name=\"External_PublicID\" value=\"cc:181\" type=\"xs:string\"/>\r\n                  <field name=\"State\" value=\"AU_NSW\" type=\"xs:string\"/>\r\n                </xmlBackedInstance>\r\n              </fk>\r\n            </xmlBackedInstance>\r\n          </array>\r\n          <array name=\"Tags\">\r\n            <xmlBackedInstance entityType=\"ABContactTag\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:204\" type=\"xs:string\"/>\r\n              <field name=\"Type\" value=\"claimparty\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactTag\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:203\" type=\"xs:string\"/>\r\n              <field name=\"Type\" value=\"beneficiary_icare\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </array>\r\n        </xmlBackedInstance>\r\n      </tns:crmContactXML>\r\n    </tns:createContact>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2385e924-ffb3-09d0-bbf2-a4abdc5489f9",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513553302460,
+			"name": "UpdateAccount",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Header>\r\n    <gwsoap:transaction_id xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">3856462c-8067-48cd-9129-2f2cbf532f08</gwsoap:transaction_id>\r\n    <gwsoap:authentication xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">\r\n      <gwsoap:username>su</gwsoap:username>\r\n      <gwsoap:password>gw</gwsoap:password>\r\n    </gwsoap:authentication>\r\n  </soap12:Header>\r\n  <soap12:Body>\r\n    <tns:updateContact xmlns:tns=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n      <tns:crmContactXML>\r\n        <xmlBackedInstance entityType=\"ABCompany\" External_UpdateApp=\"cc\" External_UpdateUser=\"su\" xmlns=\"http://guidewire.com/ctc/beanmodel\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n          <field name=\"LinkID\" value=\"001N000001GlLGMIA3\" type=\"xs:string\"/>\r\n          <field name=\"CRMVersion_icare\" value=\"2\" type=\"xs:string\"/>\r\n          <field name=\"External_PublicID\" value=\"cc:303\" type=\"xs:string\"/>\r\n          <field name=\"SourceSystem_icare\" value=\"GWCC\" type=\"xs:string\"/>\r\n           <field name=\"FormerName\" value=\"Thingy\" type=\"xs:string\"/>\r\n            <field name=\"WorkPhone\" value=\"754444444444\" type=\"xs:string\"/>\r\n          <fk name=\"PrimaryAddress\" origValue=\"ab:403\">\r\n            <xmlBackedInstance entityType=\"Address\">\r\n              <field name=\"LinkID\" value=\"ab:403\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:401\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </fk>\r\n          <array name=\"ContactAddresses\">\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Remove\">\r\n              <field name=\"LinkID\" value=\"ab:6\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:106\" type=\"xs:string\"/>\r\n              <fk name=\"Address\" origValue=\"ccm:14\">\r\n                <xmlBackedInstance entityType=\"Address\">\r\n                  <field name=\"LinkID\" value=\"ccm:14\" type=\"xs:string\"/>\r\n                  <field name=\"External_PublicID\" value=\"cc:407\" type=\"xs:string\"/>\r\n                </xmlBackedInstance>\r\n              </fk>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:107\" type=\"xs:string\"/>\r\n              <fk name=\"Address\">\r\n                <xmlBackedInstance entityType=\"Address\">\r\n                  <field name=\"AddressLine1\" value=\"987\" type=\"xs:string\"/>\r\n                  <field name=\"City\" value=\"Sydney\" type=\"xs:string\"/>\r\n                  <field name=\"Country\" value=\"AU\" type=\"xs:string\"/>\r\n                  <field name=\"PostalCode\" value=\"\" type=\"xs:string\"/>\r\n                  <field name=\"External_PublicID\" value=\"cc:408\" type=\"xs:string\"/>\r\n                  <field name=\"State\" value=\"AU_NSW\" type=\"xs:string\"/>\r\n                </xmlBackedInstance>\r\n              </fk>\r\n            </xmlBackedInstance>\r\n          </array>\r\n          <array name=\"Tags\">\r\n            <xmlBackedInstance entityType=\"ABContactTag\">\r\n              <field name=\"LinkID\" value=\"ab:401\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:301\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactTag\">\r\n              <field name=\"LinkID\" value=\"ab:402\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:302\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </array>\r\n        </xmlBackedInstance>\r\n      </tns:crmContactXML>\r\n    </tns:updateContact>\r\n  </soap12:Body>\r\n</soap12:Envelope>\r\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "390947f9-286e-9f92-b43d-6b5d346cf4c8",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513551653439,
+			"name": "FDAccount",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n      <soap1:gw_locale>?</soap1:gw_locale>\r\n      <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:findDuplicates>\r\n         <!--Optional:-->\r\n         <crm:crmContactCheck>\r\n            <!--Optional:-->\r\n            <crm1:ABN>12345678</crm1:ABN>\r\n            <!--Optional:-->\r\n            <crm1:ContactType>CompanyVendor</crm1:ContactType>\r\n            \r\n            <crm1:Tag>vendor</crm1:Tag>\r\n           \r\n            <crm1:TradingName>Acme Trade Name</crm1:TradingName>\r\n           \r\n         </crm:crmContactCheck>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm2:ChunkSize>3</crm2:ChunkSize>\r\n            <!--Optional:-->\r\n            <crm2:ExcludeTotal>true</crm2:ExcludeTotal>\r\n            <!--Optional:-->\r\n            <crm2:GetNumResultsOnly>true</crm2:GetNumResultsOnly>\r\n            <!--Optional:-->\r\n            <crm2:LocaleCode>en_AU</crm2:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm2:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               \r\n            </crm2:SortColumns>\r\n            <!--Optional:-->\r\n            <crm2:StartRow>0</crm2:StartRow>\r\n         </crm:crmContactSearchSpec>\r\n      </crm:findDuplicates>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4067ab20-79ea-9086-65d4-9678ef482419",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://dev.partner-nonprod.icare.nsw.gov.au/guidewire/soap/v1.0/GWCCContactConsumerService",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1517366917298,
+			"name": "SearchContact",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPIAddressSearch\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm4=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n   <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:searchContact>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchCriteria>\r\n            <!--Optional:-->\r\n            <crm1:Address>\r\n               <crm2:Country></crm2:Country>\r\n            </crm1:Address>\r\n            <!--Optional:-->\r\n            <crm1:ContactTag></crm1:ContactTag>\r\n            <crm1:ContactType>Person</crm1:ContactType>\r\n            <!--Optional:-->\r\n            <crm1:FirstName>John</crm1:FirstName>\r\n             <crm1:LastName></crm1:LastName>\r\n             <crm1:LegalSpecialty>Personal injury</crm1:LegalSpecialty>\r\n            <!--Optional:-->\r\n            <crm1:MedicalSpecialty></crm1:MedicalSpecialty>\r\n\r\n         </crm:crmContactSearchCriteria>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm3:ChunkSize>2</crm3:ChunkSize>\r\n            <crm3:GetNumResultsOnly>false</crm3:GetNumResultsOnly>\r\n            <crm3:LocaleCode>en_AU</crm3:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm3:StartRow>0</crm3:StartRow>\r\n             <crm3:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               <crm3:Entry>\r\n                  <!--Optional:-->\r\n                  <crm4:Ascending>true</crm4:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm4:BeanPath>FirstName</crm4:BeanPath>\r\n               </crm3:Entry>\r\n               <crm3:Entry>\r\n                  <!--Optional:-->\r\n                  <crm4:Ascending>true</crm4:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm4:BeanPath>LastName</crm4:BeanPath>\r\n               </crm3:Entry>\r\n            </crm3:SortColumns>\r\n\r\n         </crm:crmContactSearchSpec>\r\n      </crm:searchContact>\r\n   </soap:Body>\r\n</soap:Envelope>"
+		},
+		{
+			"id": "5cb560aa-b88d-33fa-0c8f-ff4f9981a57b",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513553241282,
+			"name": "UpdateContact",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<?xml version=\"1.0\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n<soap12:Header>\r\n    <gwsoap:transaction_id xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">3856462c-8067-48cd-9129-2f2cbf532f08</gwsoap:transaction_id>\r\n    <gwsoap:authentication xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">\r\n    <gwsoap:username>su</gwsoap:username>\r\n    <gwsoap:password>gw</gwsoap:password>\r\n</gwsoap:authentication>\r\n</soap12:Header>\r\n<soap12:Body>\r\n    <tns:updateContact xmlns:tns=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n    <tns:crmContactXML>\r\n        <xmlBackedInstance xmlns=\"http://guidewire.com/ctc/beanmodel\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" entityType=\"ABPerson\" External_UpdateApp=\"cc\" External_UpdateUser=\"su\">\r\n        <field name=\"LinkID\" value=\"003N0000019E8GfIAK\" type=\"xs:string\"/>\r\n        <field name=\"CRMVersion_icare\" value=\"2\" type=\"xs:string\"/>\r\n        <field name=\"External_PublicID\" value=\"cc:303\" type=\"xs:string\"/>\r\n        <field name=\"SourceSystem_icare\" value=\"GWCC\" type=\"xs:string\"/>\r\n        <field name=\"FormerName\" value=\"Thingy\" type=\"xs:string\"/>\r\n        <field name=\"WorkPhone\" value=\"\" type=\"xs:string\"/>\r\n        <fk name=\"PrimaryAddress\" origValue=\"ab:403\">\r\n            <xmlBackedInstance entityType=\"Address\">\r\n                <field name=\"LinkID\" value=\"ab:403\" type=\"xs:string\"/>\r\n                <field name=\"External_PublicID\" value=\"cc:401\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n        </fk>\r\n        <array name=\"ContactAddresses\">\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Remove\">\r\n                <field name=\"LinkID\" value=\"ab:6\" type=\"xs:string\"/>\r\n                <field name=\"External_PublicID\" value=\"cc:106\" type=\"xs:string\"/>\r\n                <fk name=\"Address\" origValue=\"ccm:14\">\r\n                    <xmlBackedInstance entityType=\"Address\">\r\n                        <field name=\"LinkID\" value=\"ccm:14\" type=\"xs:string\"/>\r\n                        <field name=\"External_PublicID\" value=\"cc:407\" type=\"xs:string\"/>\r\n                    </xmlBackedInstance>\r\n                </fk>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Add\">\r\n                <field name=\"External_PublicID\" value=\"cc:107\" type=\"xs:string\"/>\r\n                <fk name=\"Address\">\r\n                    <xmlBackedInstance entityType=\"Address\">\r\n                        <field name=\"AddressLine1\" value=\"987\" type=\"xs:string\"/>\r\n                        <field name=\"City\" value=\"Sydney\" type=\"xs:string\"/>\r\n                        <field name=\"Country\" value=\"AU\" type=\"xs:string\"/>\r\n                        <field name=\"PostalCode\" value=\"\" type=\"xs:string\"/>\r\n                        <field name=\"External_PublicID\" value=\"cc:408\" type=\"xs:string\"/>\r\n                        <field name=\"State\" value=\"AU_NSW\" type=\"xs:string\"/>\r\n                    </xmlBackedInstance>\r\n                </fk>\r\n            </xmlBackedInstance>\r\n        </array>\r\n        <array name=\"Tags\">\r\n            <xmlBackedInstance entityType=\"ABContactTag\">\r\n                <field name=\"LinkID\" value=\"ab:401\" type=\"xs:string\"/>\r\n                <field name=\"External_PublicID\" value=\"cc:301\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactTag\">\r\n                <field name=\"LinkID\" value=\"ab:402\" type=\"xs:string\"/>\r\n                <field name=\"External_PublicID\" value=\"cc:302\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n        </array>\r\n    </xmlBackedInstance>\r\n</tns:crmContactXML>\r\n</tns:updateContact>\r\n</soap12:Body>\r\n</soap12:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6347cba2-fd33-507f-0ab8-92bdf1a49ccb",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://dev.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": null,
+			"method": "POST",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getContact",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1513317472020,
+			"version": 2,
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n   <soap:Header>\r\n    \r\n      <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:getContact>\r\n         <!--Optional:-->\r\n         <crm:CRMConactID>0030l000008MRk5AAG</crm:CRMConactID>\r\n      </crm:getContact>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "67d2a8f0-f3c7-a89a-074b-0cbe1caa27bd",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513551653439,
+			"name": "FDAccount Demo",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n      <soap1:gw_locale>?</soap1:gw_locale>\r\n      <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:findDuplicates>\r\n         <!--Optional:-->\r\n         <crm:crmContactCheck>\r\n            <!--Optional:-->\r\n            <crm1:ABN>12345678</crm1:ABN>\r\n            <!--Optional:-->\r\n            <crm1:ContactType>CompanyVendor</crm1:ContactType>\r\n            \r\n            <crm1:Tag>vendor</crm1:Tag>\r\n           \r\n            <crm1:TradingName>Acme Trade Name</crm1:TradingName>\r\n           \r\n         </crm:crmContactCheck>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm2:ChunkSize>3</crm2:ChunkSize>\r\n            <!--Optional:-->\r\n            <crm2:ExcludeTotal>true</crm2:ExcludeTotal>\r\n            <!--Optional:-->\r\n            <crm2:GetNumResultsOnly>true</crm2:GetNumResultsOnly>\r\n            <!--Optional:-->\r\n            <crm2:LocaleCode>en_AU</crm2:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm2:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               \r\n            </crm2:SortColumns>\r\n            <!--Optional:-->\r\n            <crm2:StartRow>0</crm2:StartRow>\r\n         </crm:crmContactSearchSpec>\r\n      </crm:findDuplicates>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6c659cbc-fcac-734e-ecff-70bf1a062c29",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513556225581,
+			"name": "FDContact",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n      <soap1:gw_locale>?</soap1:gw_locale>\r\n      <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:findDuplicates>\r\n         <!--Optional:-->\r\n         <crm:crmContactCheck>\r\n            <!--Optional:-->\r\n            <crm1:ABN>12 345 123 123</crm1:ABN>\r\n            <!--Optional:-->\r\n            <crm1:City>Sydney</crm1:City>\r\n            <!--Optional:-->\r\n            <crm1:ContactType>Person</crm1:ContactType>\r\n            <crm1:DateOfBirth>2017-11-08</crm1:DateOfBirth>\r\n            <!--Optional:-->\r\n            <crm1:FirstName>ter</crm1:FirstName>\r\n            <!--Optional:-->\r\n            <crm1:HomePhoneNumber>+385 91 515 1731</crm1:HomePhoneNumber>\r\n            <!--Optional:-->\r\n            <crm1:LastName>soap</crm1:LastName>\r\n            <!--Optional:-->\r\n            <crm1:MobileNumber>1223456 x8</crm1:MobileNumber>\r\n            <!--Optional:-->\r\n            <crm1:Tag>client</crm1:Tag>\r\n            <!--Optional:-->\r\n            <crm1:TaxFileNumber>843 494 388</crm1:TaxFileNumber>\r\n            <!--Optional:-->\r\n            <crm1:TradingName>?</crm1:TradingName>\r\n            <!--Optional:-->\r\n            <crm1:WorkPhone>1234567</crm1:WorkPhone>\r\n         </crm:crmContactCheck>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm2:ChunkSize>0</crm2:ChunkSize>\r\n            <!--Optional:-->\r\n            <crm2:ExcludeTotal>false</crm2:ExcludeTotal>\r\n            <!--Optional:-->\r\n            <crm2:GetNumResultsOnly>false</crm2:GetNumResultsOnly>\r\n            <!--Optional:-->\r\n            <crm2:LocaleCode>en_AU</crm2:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm2:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               <crm2:Entry>\r\n                  <!--Optional:-->\r\n                  <crm3:Ascending>?</crm3:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm3:BeanPath>?</crm3:BeanPath>\r\n               </crm2:Entry>\r\n            </crm2:SortColumns>\r\n            <!--Optional:-->\r\n            <crm2:StartRow>0</crm2:StartRow>\r\n         </crm:crmContactSearchSpec>\r\n      </crm:findDuplicates>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "785a5b62-0117-90a1-dab0-3ba7b5d2f96e",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://dev.partner-nonprod.icare.nsw.gov.au/guidewire/soap/v1.0/GWCCContactConsumerService",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1517360220913,
+			"name": "FDContact Demo",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n      <soap1:gw_locale>?</soap1:gw_locale>\r\n      <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:findDuplicates>\r\n         <!--Optional:-->\r\n         <crm:crmContactCheck>\r\n            <!--Optional:-->\r\n            <crm1:ABN></crm1:ABN>\r\n            <!--Optional:-->\r\n            <crm1:City></crm1:City>\r\n            <!--Optional:-->\r\n            <crm1:ContactType>Person</crm1:ContactType>\r\n            <crm1:DateOfBirth></crm1:DateOfBirth>\r\n            <!--Optional:-->\r\n            <crm1:FirstName></crm1:FirstName>\r\n            <!--Optional:-->\r\n            <crm1:HomePhoneNumber></crm1:HomePhoneNumber>\r\n            <!--Optional:-->\r\n            <crm1:LastName>Duplicate</crm1:LastName>\r\n            <!--Optional:-->\r\n            <crm1:MobileNumber></crm1:MobileNumber>\r\n            <!--Optional:-->\r\n            <crm1:Tag>client</crm1:Tag>\r\n            <!--Optional:-->\r\n            <crm1:TaxFileNumber>12345678</crm1:TaxFileNumber>\r\n            <!--Optional:-->\r\n            <crm1:TradingName>?</crm1:TradingName>\r\n            <!--Optional:-->\r\n            <crm1:WorkPhone>1234567</crm1:WorkPhone>\r\n         </crm:crmContactCheck>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm2:ChunkSize>0</crm2:ChunkSize>\r\n            <!--Optional:-->\r\n            <crm2:ExcludeTotal>false</crm2:ExcludeTotal>\r\n            <!--Optional:-->\r\n            <crm2:GetNumResultsOnly>false</crm2:GetNumResultsOnly>\r\n            <!--Optional:-->\r\n            <crm2:LocaleCode>en_AU</crm2:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm2:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               <crm2:Entry>\r\n                  <!--Optional:-->\r\n                  <crm3:Ascending>?</crm3:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm3:BeanPath>?</crm3:BeanPath>\r\n               </crm2:Entry>\r\n            </crm2:SortColumns>\r\n            <!--Optional:-->\r\n            <crm2:StartRow>0</crm2:StartRow>\r\n         </crm:crmContactSearchSpec>\r\n      </crm:findDuplicates>\r\n   </soap:Body>\r\n</soap:Envelope>"
+		},
+		{
+			"id": "a6bc32fc-b1bf-25d8-7968-d6975eac366f",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1515731501133,
+			"name": "SearchAccount copy",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPIAddressSearch\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm4=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n   <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:searchContact>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchCriteria>\r\n            <!--Optional:-->\r\n            <crm1:Address>\r\n               <crm2:Country></crm2:Country>\r\n            </crm1:Address>\r\n            <!--Optional:-->\r\n            <crm1:ContactTag></crm1:ContactTag>\r\n            <crm1:ContactType>Company</crm1:ContactType>\r\n            <!--Optional:-->\r\n            <crm1:FirstName></crm1:FirstName>\r\n             <crm1:LastName></crm1:LastName>\r\n              <crm1:OrganizationName>Acme Corporation</crm1:OrganizationName>\r\n         </crm:crmContactSearchCriteria>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm3:ChunkSize>5</crm3:ChunkSize>\r\n            <crm3:GetNumResultsOnly>false</crm3:GetNumResultsOnly>\r\n            <crm3:LocaleCode>en_AU</crm3:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm3:StartRow>0</crm3:StartRow>\r\n             <crm3:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               <crm3:Entry>\r\n                  <!--Optional:-->\r\n                  <crm4:Ascending>true</crm4:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm4:BeanPath>OrganizationName</crm4:BeanPath>\r\n               </crm3:Entry>\r\n               \r\n            </crm3:SortColumns>\r\n\r\n         </crm:crmContactSearchSpec>\r\n      </crm:searchContact>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "abc3bfba-2db4-3fb8-c7f4-68030410d863",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513553302460,
+			"name": "UpdateAccount copy",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Header>\r\n    <gwsoap:transaction_id xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">3856462c-8067-48cd-9129-2f2cbf532f08</gwsoap:transaction_id>\r\n    <gwsoap:authentication xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">\r\n      <gwsoap:username>su</gwsoap:username>\r\n      <gwsoap:password>gw</gwsoap:password>\r\n    </gwsoap:authentication>\r\n  </soap12:Header>\r\n  <soap12:Body>\r\n    <tns:updateContact xmlns:tns=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n      <tns:crmContactXML>\r\n        <xmlBackedInstance entityType=\"ABCompany\" External_UpdateApp=\"cc\" External_UpdateUser=\"su\" xmlns=\"http://guidewire.com/ctc/beanmodel\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\r\n          <field name=\"LinkID\" value=\"001N000001GlLGMIA3\" type=\"xs:string\"/>\r\n          <field name=\"CRMVersion_icare\" value=\"2\" type=\"xs:string\"/>\r\n          <field name=\"External_PublicID\" value=\"cc:303\" type=\"xs:string\"/>\r\n          <field name=\"SourceSystem_icare\" value=\"GWCC\" type=\"xs:string\"/>\r\n           <field name=\"FormerName\" value=\"Thingy\" type=\"xs:string\"/>\r\n            <field name=\"WorkPhone\" value=\"754444444444\" type=\"xs:string\"/>\r\n          <fk name=\"PrimaryAddress\" origValue=\"ab:403\">\r\n            <xmlBackedInstance entityType=\"Address\">\r\n              <field name=\"LinkID\" value=\"ab:403\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:401\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </fk>\r\n          <array name=\"ContactAddresses\">\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Remove\">\r\n              <field name=\"LinkID\" value=\"ab:6\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:106\" type=\"xs:string\"/>\r\n              <fk name=\"Address\" origValue=\"ccm:14\">\r\n                <xmlBackedInstance entityType=\"Address\">\r\n                  <field name=\"LinkID\" value=\"ccm:14\" type=\"xs:string\"/>\r\n                  <field name=\"External_PublicID\" value=\"cc:407\" type=\"xs:string\"/>\r\n                </xmlBackedInstance>\r\n              </fk>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:107\" type=\"xs:string\"/>\r\n              <fk name=\"Address\">\r\n                <xmlBackedInstance entityType=\"Address\">\r\n                  <field name=\"AddressLine1\" value=\"987\" type=\"xs:string\"/>\r\n                  <field name=\"City\" value=\"Sydney\" type=\"xs:string\"/>\r\n                  <field name=\"Country\" value=\"AU\" type=\"xs:string\"/>\r\n                  <field name=\"PostalCode\" value=\"\" type=\"xs:string\"/>\r\n                  <field name=\"External_PublicID\" value=\"cc:408\" type=\"xs:string\"/>\r\n                  <field name=\"State\" value=\"AU_NSW\" type=\"xs:string\"/>\r\n                </xmlBackedInstance>\r\n              </fk>\r\n            </xmlBackedInstance>\r\n          </array>\r\n          <array name=\"Tags\">\r\n            <xmlBackedInstance entityType=\"ABContactTag\">\r\n              <field name=\"LinkID\" value=\"ab:401\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:301\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactTag\">\r\n              <field name=\"LinkID\" value=\"ab:402\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:302\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </array>\r\n        </xmlBackedInstance>\r\n      </tns:crmContactXML>\r\n    </tns:updateContact>\r\n  </soap12:Body>\r\n</soap12:Envelope>\r\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "b8aa0237-d8a4-2c30-f51b-92853c45be12",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://dev.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513316680565,
+			"name": "Create Contact",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"isFromCollection": true,
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Header>\r\n    <gwsoap:transaction_id xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">cdad531c-2366-4722-a2f8-8cbb257f685e</gwsoap:transaction_id>\r\n    <gwsoap:authentication xmlns:gwsoap=\"http://guidewire.com/ws/soapheaders\">\r\n      <gwsoap:username>su</gwsoap:username>\r\n      <gwsoap:password>gw</gwsoap:password>\r\n    </gwsoap:authentication>\r\n  </soap12:Header>\r\n  <soap12:Body>\r\n    <tns:createContact xmlns:tns=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n      <tns:crmContactXML>\r\n        <xmlBackedInstance xmlns=\"http://guidewire.com/ctc/beanmodel\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" entityType=\"ABPerson\" External_UpdateApp=\"cc\" External_UpdateUser=\"su\">\r\n          <field name=\"CellPhone\" value=\"5355155\" type=\"xs:string\"/>\r\n          <field name=\"CellPhoneCountry\" value=\"AU\" type=\"xs:string\"/>\r\n          <field name=\"EmailAddress1\" value=\"aris@mo.com\" type=\"xs:string\"/>\r\n          <field name=\"FirstName\" value=\"ethghd\" type=\"xs:string\"/>\r\n          <field name=\"HomePhone\" value=\"858697\" type=\"xs:string\"/>\r\n          <field name=\"HomePhoneCountry\" value=\"AU\" type=\"xs:string\"/>\r\n          <field name=\"LastName\" value=\"ertert\" type=\"xs:string\"/>\r\n          <field name=\"Preferred\" value=\"false\" origValue=\"false\" type=\"xs:boolean\"/>\r\n          <field name=\"PrimaryPhone\" value=\"home\" type=\"xs:string\"/>\r\n          <field name=\"External_PublicID\" value=\"cc:204\" type=\"xs:string\"/>\r\n          <field name=\"SourceSystem_icare\" value=\"SalesForce\" type=\"xs:string\"/>\r\n          <field name=\"WorkPhone\" value=\"8052223333\" type=\"xs:string\"/>\r\n           <field name=\"Gender\" value=\"F\" type=\"xs:string\"/>\r\n        \r\n          <fk name=\"PrimaryAddress\">\r\n            <xmlBackedInstance entityType=\"Address\">\r\n              <field name=\"AddressLine1\" value=\"321 Kent Street\" type=\"xs:string\"/>\r\n              <field name=\"AddressType\" value=\"home\" type=\"xs:string\"/>\r\n              <field name=\"City\" value=\"Sydney\" type=\"xs:string\"/>\r\n              <field name=\"Country\" value=\"AU\" type=\"xs:string\"/>\r\n              <field name=\"PostalCode\" value=\"2000\" type=\"xs:string\"/>\r\n              <field name=\"External_PublicID\" value=\"cc:202\" type=\"xs:string\"/>\r\n              <field name=\"State\" value=\"AU_NSW\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </fk>\r\n           <array name=\"ContactAddresses\">\r\n            <xmlBackedInstance entityType=\"ABContactAddress\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:3\" type=\"xs:string\"/>\r\n              <fk name=\"Address\">\r\n                <xmlBackedInstance entityType=\"Address\">\r\n                  <field name=\"AddressLine1\" value=\"1 Address\" type=\"xs:string\"/>\r\n                  <field name=\"AddressLine2\" value=\"2 Address\" type=\"xs:string\"/>\r\n                  <field name=\"AddressLine3\" value=\"3 Address\" type=\"xs:string\"/>\r\n                  <field name=\"AddressType\" value=\"other\" type=\"xs:string\"/>\r\n                  <field name=\"City\" value=\"Ryde\" type=\"xs:string\"/>\r\n                  <field name=\"Country\" value=\"AU\" type=\"xs:string\"/>\r\n                  <field name=\"PostalCode\" value=\"2000\" type=\"xs:string\"/>\r\n                  <field name=\"External_PublicID\" value=\"cc:181\" type=\"xs:string\"/>\r\n                  <field name=\"State\" value=\"AU_NSW\" type=\"xs:string\"/>\r\n                </xmlBackedInstance>\r\n              </fk>\r\n            </xmlBackedInstance>\r\n          </array>\r\n          <array name=\"Tags\">\r\n            <xmlBackedInstance entityType=\"ABContactTag\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:204\" type=\"xs:string\"/>\r\n              <field name=\"Type\" value=\"claimparty\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n            <xmlBackedInstance entityType=\"ABContactTag\" action=\"Add\">\r\n              <field name=\"External_PublicID\" value=\"cc:203\" type=\"xs:string\"/>\r\n              <field name=\"Type\" value=\"beneficiary_icare\" type=\"xs:string\"/>\r\n            </xmlBackedInstance>\r\n          </array>\r\n        </xmlBackedInstance>\r\n      </tns:crmContactXML>\r\n    </tns:createContact>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "bd98bc51-afc8-e725-5bf0-2b4bbe085eb0",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513551530117,
+			"name": "SearchAccount",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPIAddressSearch\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm4=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n   <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:searchContact>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchCriteria>\r\n            <!--Optional:-->\r\n            <crm1:Address>\r\n               <crm2:Country></crm2:Country>\r\n            </crm1:Address>\r\n            <!--Optional:-->\r\n            <crm1:ContactTag></crm1:ContactTag>\r\n            <crm1:ContactType>Company</crm1:ContactType>\r\n            <!--Optional:-->\r\n            <crm1:FirstName></crm1:FirstName>\r\n             <crm1:LastName></crm1:LastName>\r\n              <crm1:OrganizationName>Acme Corporation</crm1:OrganizationName>\r\n         </crm:crmContactSearchCriteria>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm3:ChunkSize>5</crm3:ChunkSize>\r\n            <crm3:GetNumResultsOnly>false</crm3:GetNumResultsOnly>\r\n            <crm3:LocaleCode>en_AU</crm3:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm3:StartRow>0</crm3:StartRow>\r\n             <crm3:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               <crm3:Entry>\r\n                  <!--Optional:-->\r\n                  <crm4:Ascending>true</crm4:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm4:BeanPath>OrganizationName</crm4:BeanPath>\r\n               </crm3:Entry>\r\n               \r\n            </crm3:SortColumns>\r\n\r\n         </crm:crmContactSearchSpec>\r\n      </crm:searchContact>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c218c377-0941-c820-20de-2f72f57eef4a",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://st.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1513554390966,
+			"name": "getAccount",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n   <soap:Header>\r\n    \r\n      <soap1:gw_language>en_AU?</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:getContact>\r\n         <!--Optional:-->\r\n         <crm:CRMConactID>001N000001HIR5NIAX</crm:CRMConactID>\r\n      </crm:getContact>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c3c56893-89ae-48e1-117f-0fe1672c11b0",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://dev.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1515718868991,
+			"name": "SearchContact -error",
+			"description": "",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\" xmlns:crm1=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchCriteria\" xmlns:crm2=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPIAddressSearch\" xmlns:crm3=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSpec\" xmlns:crm4=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPISearchSortColumn\">\r\n   <soap:Header>\r\n   <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:searchContact>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchCriteria>\r\n            <!--Optional:-->\r\n            <crm1:Address>\r\n               <crm2:Country></crm2:Country>\r\n            </crm1:Address>\r\n            <!--Optional:-->\r\n            <crm1:ContactTag></crm1:ContactTag>\r\n            <crm1:ContactType>Person</crm1:ContactType>\r\n            <!--Optional:-->\r\n            <crm1:FirstName>John</crm1:FirstName>\r\n             <crm1:LastName></crm1:LastName>\r\n         </crm:crmContactSearchCriteria>\r\n         <!--Optional:-->\r\n         <crm:crmContactSearchSpec>\r\n            <!--Optional:-->\r\n            <crm3:ChunkSize>2</crm3:ChunkSize>\r\n            <crm3:GetNumResultsOnly>false</crm3:GetNumResultsOnly>\r\n            <crm3:LocaleCode>en_AU</crm3:LocaleCode>\r\n            <!--Optional:-->\r\n            <crm3:StartRow>0</crm3:StartRow>\r\n             <crm3:SortColumns>\r\n               <!--Zero or more repetitions:-->\r\n               <crm3:Entry>\r\n                  <!--Optional:-->\r\n                  <crm4:Ascending>true</crm4:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm4:BeanPath>FirstName</crm4:BeanPath>\r\n               </crm3:Entry>\r\n               <crm3:Entry>\r\n                  <!--Optional:-->\r\n                  <crm4:Ascending>true</crm4:Ascending>\r\n                  <!--Optional:-->\r\n                  <crm4:BeanPath>LastName</crm4:BeanPath>\r\n               </crm3:Entry>\r\n            </crm3:SortColumns>\r\n\r\n         </crm:crmContactSearchSpec>\r\n      </crm:searchContact>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"isFromCollection": true,
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "d592b612-b65b-0735-5ac3-b300107259be",
+			"headers": "Content-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://dev.partner-nonprod.icare.nsw.gov.au/v1/CRMContactAPI",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": null,
+			"method": "POST",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"data": [],
+			"dataMode": "raw",
+			"name": "getContact copy",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1513317472020,
+			"version": 2,
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"rawModeData": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:soap1=\"http://guidewire.com/ws/soapheaders\" xmlns:crm=\"http://guidewire.com/cc/ws/icare/webservice/crm/contact/CRMContactAPI\">\r\n   <soap:Header>\r\n    \r\n      <soap1:gw_language>en_AU</soap1:gw_language>\r\n      <soap1:authentication>\r\n         <soap1:username>su</soap1:username>\r\n         <soap1:password>gw</soap1:password>\r\n      </soap1:authentication>\r\n   </soap:Header>\r\n   <soap:Body>\r\n      <crm:getContact>\r\n         <!--Optional:-->\r\n         <crm:CRMConactID>0030l000008MRk5AAG</crm:CRMConactID>\r\n      </crm:getContact>\r\n   </soap:Body>\r\n</soap:Envelope>",
+			"isFromCollection": true,
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "fba0b1e0-4e64-8c2e-ef4a-d192b327b402",
+			"headers": "",
+			"headerData": [],
+			"url": "",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"data": null,
+			"dataMode": "params",
+			"name": "getContact",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1513316765353,
+			"version": 2,
+			"responses": [],
+			"collection_id": "630483d2-7eed-bc4a-d8c0-29db0e90d50d",
+			"isFromCollection": true,
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
